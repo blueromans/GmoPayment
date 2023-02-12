@@ -16,13 +16,12 @@ pip install GmoPayment
 Sample calling ExecTran.idPass
 
 ```python
-from GmoPayment import Gateway
+from GmoPayment import Gateway, ResponseError
 
 gmopg = Gateway(timeout=10, production=True)
 try:
-    response = gmopg.tran.execute(
-        {'ShopID': 'your-shop-id', 'ShopPass': 'your-shop-pass', 'OrderID': 'your-order-id': '1234', 'JobCD': '1234'})
-    except ResponseError as e:
+    response = gmopg.tran.execute({'ShopID': 'shop_id', 'ShopPass': 'password', 'OrderID': 'ORDER0000001', 'JobCd': '1234', 'Amount': 1000})
+except ResponseError as e:
     print(e)
 else:
     print(response.data)
