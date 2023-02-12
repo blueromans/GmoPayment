@@ -102,7 +102,7 @@ class Tran(BaseAPI):
         return self.post('EntryTran.idPass', data=options)
 
     def execute(self, options={}):
-        self.assertRequiredOptions(['AccessID', 'AccessPass', 'OrderID'], options)
+        self.assertRequiredOptions(['ShopID', 'ShopPass', 'OrderID', 'JobCd', 'Amount'], options)
         assert ('Method' not in options or options['Method'] % 2 != 0) or 'PayTimes' in options
 
         return self.post('ExecTran.idPass', data=options)

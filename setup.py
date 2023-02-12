@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name='GmoPayment',
-    version="0.0.1",
+    version="0.0.2",
     author="Yaşar Özyurt",
     keywords="GmoPayment",
     author_email="blueromans@gmail.com",
